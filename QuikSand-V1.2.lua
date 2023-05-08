@@ -1,30 +1,40 @@
+local url = "https://raw.githubusercontent.com/Revelium/QuikSand-V1.2/master/QuikSand-V1.2.lua" 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Revelium/QuikSand-V1.2/master/QuikSand-V1.2.lua"))()True
+
+-- Run the script
+scriptFunction()
+
 -- Store references to the player and character objects
 local player = game.Players.LocalPlayer
 local character = player.Character
 
 -- Function to handle keyboard input
-function processKeyboardInput(inputObject)
-    if inputObject.KeyCode == Enum.KeyCode.E then
-        if not character.Humanoid.FeetPlacementType then
-            character.Humanoid.FeetPlacementType = Enum.FootPlacementType.Flat
-            
-            -- Sink the player into the ground over time
-            character.Humanoid.WalkSpeed = -50
-            wait(2)
-            character.Humanoid.WalkSpeed = -75
-            wait(2)
-            character.Humanoid.WalkSpeed = -100
-            wait(2)
-            character.Humanoid.WalkSpeed = 0
-        else
-            -- Rise the player out of the ground over time
-            character.Humanoid.WalkSpeed = 50
-            wait(2)
-            character.Humanoid.WalkSpeed = 75
-            wait(2)
-            character.Humanoid.WalkSpeed = 100
-            wait(2)
-            character.Humanoid.WalkSpeed = 0
+function processKeyboardInput()
+    if game:GetService("UserInputService").InputBegan("keyboard") then
+        for _, event in pairs(game:GetService("UserInputService").InputEndedEvents["keyboard"]) do
+            if event.KeyCode == Enums.KeyCode.E then
+                if not character.Humanoid.FeetPlacementType then
+                    character.Humanoid.FeetPlacementType = Enums.FootPlacementType.Flat
+                    
+                    -- Sink the player into the ground over time
+                    character.Humanoid.WalkSpeed = -50
+                    wait(2)
+                    character.Humanoid.WalkSpeed = -75
+                    wait(2)
+                    character.Humanoid.WalkSpeed = -100
+                    wait(2)
+                    character.Humanoid.WalkSpeed = 0
+                else
+                    -- Rise the player out of the ground over time
+                    character.Humanoid.WalkSpeed = 50
+                    wait(2)
+                    character.Humanoid.WalkSpeed = 75
+                    wait(2)
+                    character.Humanoid.WalkSpeed = 100
+                    wait(2)
+                    character.Humanoid.WalkSpeed = 0
+                end
+            end
         end
     end
 end
