@@ -1,3 +1,13 @@
+-- Script By: DiemzMaster, AlohaGryphin, PorQueTorQue
+
+-- Idea By: 65GamingHolie, VCGDuparier, HolayMolay, ChickenKFCEten
+
+-- Make sure to join our discord!
+
+-- https://discord.com/invite/DJousting
+
+-- (If it's expired it's not my fault you're late)
+
 local url = "https://raw.githubusercontent.com/Revelium/QuikSand-V1.2/master/QuikSand-V1.2.lua" 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Revelium/QuikSand-V1.2/master/QuikSand-V1.2.lua"))()True
 
